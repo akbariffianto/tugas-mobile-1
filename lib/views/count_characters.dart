@@ -8,14 +8,22 @@ class CountCharactersPage extends StatelessWidget {
 
   void _countCharacters() {
     final String input = _stringController.text;
-    _result = 'Number of characters: ${input.length}';
+
+    // Use a regular expression to find all digits in the input string
+    final RegExp regex = RegExp(r'\d');
+    final Iterable<Match> matches = regex.allMatches(input);
+
+    // Count the number of matches (digits)
+    final int count = matches.length;
+
+    _result = 'Number of digits: $count';
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Count Characters'),
+        title: Text('Count Characters Digits'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

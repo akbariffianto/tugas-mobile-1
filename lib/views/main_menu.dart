@@ -30,7 +30,7 @@ class MainMenu extends StatelessWidget {
               ),
               SizedBox(height: 20),
               MenuButton(
-                title: 'Count Characters',
+                title: 'Count Characters Digits',
                 onPressed: () {
                   Navigator.push(
                     context,
