@@ -23,8 +23,8 @@ class CountCharactersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Count Characters Digits'),
-      ),
+          title: Text('Count Characters Digits'),
+          backgroundColor: Color(0xFF5B913B)),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -36,6 +36,8 @@ class CountCharactersPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             ElevatedButton(
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Color(0xFF5B913B)),
               onPressed: () {
                 _countCharacters();
                 showDialog(
@@ -53,13 +55,16 @@ class CountCharactersPage extends StatelessWidget {
                   ),
                 );
               },
-              child: Text('Count'),
+              child: Text('Count', style: TextStyle(color: Colors.black)),
             ),
+            SizedBox(height: 20),
             ElevatedButton(
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Color(0xFF5B913B)),
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Back'),
+              child: Text('Back', style: TextStyle(color: Colors.black)),
             ),
           ],
         ),

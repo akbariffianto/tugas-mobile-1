@@ -21,8 +21,7 @@ class OddEvenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Odd or Even'),
-      ),
+          title: Text('Odd or Even'), backgroundColor: Color(0xFF5B913B)),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -35,6 +34,8 @@ class OddEvenPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             ElevatedButton(
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Color(0xFF5B913B)),
               onPressed: () {
                 _checkOddEven();
                 showDialog(
@@ -52,13 +53,16 @@ class OddEvenPage extends StatelessWidget {
                   ),
                 );
               },
-              child: Text('Check'),
+              child: Text('Check', style: TextStyle(color: Colors.black)),
             ),
+            SizedBox(height: 20),
             ElevatedButton(
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Color(0xFF5B913B)),
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Back'),
+              child: Text('Back', style: TextStyle(color: Colors.black)),
             ),
           ],
         ),

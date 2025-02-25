@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Login Menu App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor:
+            Color(0xFFFFE8B6),
       ),
       home: LoginPage(),
     );
-  } 
+  }
 }

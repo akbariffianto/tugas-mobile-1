@@ -3,62 +3,111 @@ import 'package:flutter_application_1/views/calculator.dart';
 import 'package:flutter_application_1/views/count_characters.dart';
 import 'package:flutter_application_1/views/login_page.dart';
 import 'package:flutter_application_1/views/odd_even.dart';
-import 'package:flutter_application_1/views/widgets/menu_button_widget.dart';
+import 'package:flutter_application_1/views/datakelompok.dart';
 
 class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Main Menu'),
+        title: const Text('Main Menu'),
+        centerTitle: true,
+        backgroundColor: Color(0xFF5B913B)
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              MenuButton(
-                title: 'Calculator',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CalculatorPage()),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 3, 
+              child: GridView.builder(
+                itemCount: 4,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, 
+                  crossAxisSpacing: 16.0,
+                  mainAxisSpacing: 16.0,
+                  childAspectRatio: 1, 
+                ),
+                itemBuilder: (context, index) {
+                  final List<Map<String, dynamic>> menuItems = [
+                    {
+                      "title": "Data Kelompok",
+                      "page": DataKelompokPage(),
+                    },
+                    {
+                      "title": "Calculator",
+                      "page": CalculatorPage(),
+                    },
+                    {
+                      "title": "Count Characters Digits",
+                      "page": CountCharactersPage(),
+                    },
+                    {
+                      "title": "Odd or Even",
+                      "page": OddEvenPage(),
+                    },
+                  ];
+
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => menuItems[index]["page"]),
+                      );
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFFFE8B6),
+                        borderRadius: BorderRadius.circular(12), 
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 4,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: Text(
+                        menuItems[index]["title"],
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   );
                 },
               ),
-              SizedBox(height: 20),
-              MenuButton(
-                title: 'Count Characters Digits',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => CountCharactersPage()),
-                  );
-                },
-              ),
-              SizedBox(height: 20),
-              MenuButton(
-                title: 'Odd or Even',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OddEvenPage()),
-                  );
-                },
-              ),
-              const SizedBox(height: 20),
-              MenuButton(
-                  title: "LogOut",
-                  color: Colors.red ,
+            ),
+
+            const SizedBox(height: 20), // Memberi jarak antara GridView dan tombol Logout
+
+            // Tombol Logout di bawah menu, tidak di bawah layar
+            Align(
+              alignment: Alignment.center,
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8), // Sedikit melengkung
+                    ),
+                  ),
                   onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
-                  }),
-            ],
-          ),
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPage()),
+                    );
+                  },
+                  child: const Text(
+                    "LogOut",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

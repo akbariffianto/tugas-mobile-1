@@ -34,25 +34,39 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Login'),
+        centerTitle: true,
+        backgroundColor: Color(0xFF5B913B)
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(40.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextField(
-              controller: _usernameController,
-              decoration: InputDecoration(labelText: 'Username'),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                  vertical: 10.0),
+              child: TextField(
+                controller: _usernameController,
+                decoration: InputDecoration(labelText: 'Username'),
+              ),
             ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10.0),
+              child: TextField(
+                controller: _passwordController,
+                decoration: InputDecoration(labelText: 'Password'),
+                obscureText: true,
+              ),
             ),
             SizedBox(height: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize:
+                    Size(double.infinity, 40),
+                backgroundColor: Color(0xFF5B913B)
+              ),
               onPressed: _login,
-              child: Text('Login'),
+              child: Text('Login', style: TextStyle(fontSize: 15, color: Colors.black),),
             ),
             if (_errorMessage.isNotEmpty)
               Padding(

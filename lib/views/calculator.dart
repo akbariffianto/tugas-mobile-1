@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class CalculatorPage extends StatelessWidget {
@@ -8,7 +6,7 @@ class CalculatorPage extends StatelessWidget {
   String _result = '';
 
   void _add() {
-    try{
+    try {
       final int num1 = int.parse(_num1Controller.text);
       final int num2 = int.parse(_num2Controller.text);
       _result = 'Result: ${num1 + num2}';
@@ -17,8 +15,8 @@ class CalculatorPage extends StatelessWidget {
     }
   }
 
-void _subtract() {
-    try{
+  void _subtract() {
+    try {
       final int num1 = int.parse(_num1Controller.text);
       final int num2 = int.parse(_num2Controller.text);
       _result = 'Result: ${num1 - num2}';
@@ -27,8 +25,8 @@ void _subtract() {
     }
   }
 
-void _multiply() {
-    try{
+  void _multiply() {
+    try {
       final int num1 = int.parse(_num1Controller.text);
       final int num2 = int.parse(_num2Controller.text);
       _result = 'Result: ${num1 * num2}';
@@ -37,8 +35,8 @@ void _multiply() {
     }
   }
 
-void _divide() {
-    try{
+  void _divide() {
+    try {
       final int num1 = int.parse(_num1Controller.text);
       final int num2 = int.parse(_num2Controller.text);
       _result = 'Result: ${num1 / num2}';
@@ -50,9 +48,8 @@ void _divide() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Addition'),
-      ),
+      appBar:
+          AppBar(title: Text('Addition'), backgroundColor: Color(0xFF5B913B)),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -73,6 +70,8 @@ void _divide() {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF5B913B)),
                   onPressed: () {
                     _add();
                     showDialog(
@@ -90,9 +89,11 @@ void _divide() {
                       ),
                     );
                   },
-                  child: Text('+'),
+                  child: Text('+', style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF5B913B)),
                   onPressed: () {
                     _subtract();
                     showDialog(
@@ -110,9 +111,11 @@ void _divide() {
                       ),
                     );
                   },
-                  child: Text('-'),
+                  child: Text('-', style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF5B913B)),
                   onPressed: () {
                     _multiply();
                     showDialog(
@@ -130,9 +133,11 @@ void _divide() {
                       ),
                     );
                   },
-                  child: Text('x'),
+                  child: Text('x', style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF5B913B)),
                   onPressed: () {
                     _divide();
                     showDialog(
@@ -150,16 +155,18 @@ void _divide() {
                       ),
                     );
                   },
-                  child: Text('/'),
+                  child: Text('/', style: TextStyle(color: Colors.black)),
                 ),
               ],
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF5B913B)),
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Back'),
+              child: Text('Back', style: TextStyle(color: Colors.black)),
             ),
           ],
         ),
