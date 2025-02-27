@@ -16,7 +16,7 @@ class CountCharactersPage extends StatelessWidget {
     // Count the number of matches (digits)
     final int count = matches.length;
 
-    _result = 'Number of digits: $count';
+    _result = 'Jumlah digit yang terdeteksi: $count';
   }
 
   @override
@@ -32,7 +32,7 @@ class CountCharactersPage extends StatelessWidget {
           children: <Widget>[
             TextField(
               controller: _stringController,
-              decoration: InputDecoration(labelText: 'Enter a string'),
+              decoration: InputDecoration(labelText: 'Enter data yang ingin dihitung'),
             ),
             SizedBox(height: 20),
             ElevatedButton(
@@ -55,7 +55,7 @@ class CountCharactersPage extends StatelessWidget {
                   ),
                 );
               },
-              child: Text('Count', style: TextStyle(color: Colors.black)),
+              child: Text('Hitung', style: TextStyle(color: Colors.black)),
             ),
             SizedBox(height: 20),
             ElevatedButton(

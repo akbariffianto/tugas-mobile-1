@@ -8,12 +8,12 @@ class OddEvenPage extends StatelessWidget {
     try {
       final int num = int.parse(_numController.text);
       if (num % 2 == 0) {
-        _result = 'The number is even';
+        _result = 'Data angka genap';
       } else {
-        _result = 'The number is odd';
+        _result = 'Data angka ganjil';
       }
     } catch (e) {
-      _result = 'Please enter a valid number';
+      _result = 'Tolong untuk hanya menginputkan data bertipe angka';
     }
   }
 

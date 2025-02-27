@@ -39,11 +39,11 @@ class MainMenu extends StatelessWidget {
                       "page": CalculatorPage(),
                     },
                     {
-                      "title": "Count Characters Digits",
+                      "title": "Menghitung karakter digit",
                       "page": CountCharactersPage(),
                     },
                     {
-                      "title": "Odd or Even",
+                      "title": "Genap Atau Ganjil?",
                       "page": OddEvenPage(),
                     },
                   ];

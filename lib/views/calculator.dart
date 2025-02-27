@@ -9,9 +9,9 @@ class CalculatorPage extends StatelessWidget {
     try {
       final int num1 = int.parse(_num1Controller.text);
       final int num2 = int.parse(_num2Controller.text);
-      _result = 'Result: ${num1 + num2}';
+      _result = 'Hasil: ${num1 + num2}';
     } catch (e) {
-      _result = 'Please enter a valid number';
+      _result = 'Tolong untuk hanya menginputkan data bertipe angka';
     }
   }
 
@@ -19,9 +19,9 @@ class CalculatorPage extends StatelessWidget {
     try {
       final int num1 = int.parse(_num1Controller.text);
       final int num2 = int.parse(_num2Controller.text);
-      _result = 'Result: ${num1 - num2}';
+      _result = 'Hasil: ${num1 - num2}';
     } catch (e) {
-      _result = 'Please enter a valid number';
+      _result = 'Tolong untuk hanya menginputkan data bertipe angka';
     }
   }
 
@@ -29,9 +29,9 @@ class CalculatorPage extends StatelessWidget {
     try {
       final int num1 = int.parse(_num1Controller.text);
       final int num2 = int.parse(_num2Controller.text);
-      _result = 'Result: ${num1 * num2}';
+      _result = 'Hasil: ${num1 * num2}';
     } catch (e) {
-      _result = 'Please enter a valid number';
+      _result = 'Tolong untuk hanya menginputkan data bertipe angka';
     }
   }
 
@@ -39,9 +39,9 @@ class CalculatorPage extends StatelessWidget {
     try {
       final int num1 = int.parse(_num1Controller.text);
       final int num2 = int.parse(_num2Controller.text);
-      _result = 'Result: ${num1 / num2}';
+      _result = 'Hasil: ${num1 / num2}';
     } catch (e) {
-      _result = 'Please enter a valid number';
+      _result = 'Tolong untuk hanya menginputkan data bertipe angka';
     }
   }
 
