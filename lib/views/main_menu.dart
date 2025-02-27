@@ -56,6 +56,7 @@ class MainMenu extends StatelessWidget {
                       );
                     },
                     child: Container(
+                      padding: const EdgeInsets.all(16),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: Color(0xFFFFE8B6),
